@@ -317,6 +317,15 @@ img{
   margin-top: 36px;
 }
 
+.todo-illustration{
+  width: 100%;
+  height: 250px;
+  margin-top: 24px;
+  /* border: 1px solid rgba(0, 0, 0, 0.073);
+  border-radius: 12px; */
+  
+  
+}
 .status-box{
   display: flex;
   align-items: center;
@@ -333,29 +342,6 @@ img{
   color: rgba(128, 128, 128, 0.573);
 }
 
-
-
-.carousel {
-  width: 200px; /* adjust visible area */
-  overflow: hidden;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-}
-
-.carousel-track {
-  display: flex;
-  gap: 12px;
-  animation: scroll 10s linear infinite;
-}
-
-@keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.carousel picture {
-  flex: 0 0 auto;
-}
 
 .place-holder {
   color: rgba(128, 128, 128, 0.62);

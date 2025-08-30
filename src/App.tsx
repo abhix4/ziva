@@ -198,6 +198,9 @@ function App() {
               <StatusCount value={todos.filter(todo => todo.completed).length} className="status-count2" />
             </div>
           </div>
+          <div className='todo-illustration'>
+            <img src='/todo2.png' alt='todo illustration'/>
+          </div>
          </div>
     </div>
     {
