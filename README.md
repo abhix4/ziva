@@ -2,6 +2,11 @@
 
 A responsive Todo application built with **React**, **TypeScript**, and **Vite**.
 
+
+### Design 
+![alt text](image.png)
+figma file - https://www.figma.com/design/WuCc7c5WCTjTm8k1pnpjCH/Ziva-Assignment?node-id=0-1&t=ti7j6slqlb4Nodlf-1
+
 ## Features
 
 - Add, edit, and delete todos
