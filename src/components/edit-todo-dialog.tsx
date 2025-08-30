@@ -86,7 +86,7 @@ export default function EditTodoDialog({ todo, onUpdate, onCloseDialog }: EditTo
                 { value: "low", color: "#4caf50" },
                 { value: "medium", color: "#ff9800" },
                 { value: "high", color: "#f44336" },
-            ].map((p) => (
+            ].map((p: any) => (
                 <button
                 id={`priority-${p.value}-btn`}
                     key={p.value}
