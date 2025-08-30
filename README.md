@@ -63,6 +63,3 @@ public/
 - [Lucide Icons](https://lucide.dev/)
 - [react-hot-toast](https://react-hot-toast.com/)
 
-## License
-
-MIT
