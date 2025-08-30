@@ -2,6 +2,7 @@ import { useState } from "react";
 import type { TodoItem } from "../types/todos";
 import { X } from "lucide-react";
 import toast from "react-hot-toast";
+import '../styles/dialog.css'
 
 interface EditTodoDialogProps {
   todo: TodoItem;

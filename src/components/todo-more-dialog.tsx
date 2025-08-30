@@ -1,6 +1,7 @@
 import { Pencil, Trash } from "lucide-react";
 import type { TodoItem } from "../types/todos";
 import toast from "react-hot-toast";
+import '../styles/dialog.css'
 
 interface TodoMoreDialogProps {
   todo: TodoItem;

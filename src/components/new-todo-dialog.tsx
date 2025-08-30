@@ -1,6 +1,7 @@
 import { useState } from "react";
 import type { TodoItem } from "../types/todos";
 import { X } from "lucide-react";
+import '../styles/dialog.css'
 
 interface NewTodoDialogProps {
   onAdd: (todo: TodoItem) => void;

@@ -7,19 +7,22 @@ import type { TodoItem } from './types/todos';
 import EditTodoDialog from './components/edit-todo-dialog';
 import toast, { Toaster } from 'react-hot-toast';
 import StatusCount from './components/status-count';
+import UserDialog from './components/user-dialog';
 
 
 
 function App() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
-const [todos, setTodos] = useState<TodoItem[]>(() => {
-  const saved = localStorage.getItem("todos");
-  return saved ? JSON.parse(saved) : [];
-});
+  const [todos, setTodos] = useState<TodoItem[]>(() => {
+    const saved = localStorage.getItem("todos");
+    return saved ? JSON.parse(saved) : [];
+  });
 
   const [isEditDialogOpen, setIsEditDialogOpen] = useState(false);
   const [currentTodo, setCurrentTodo] = useState<TodoItem | null>(null);
   const [filter, setFilter] = useState<'all' | 'completed' | 'pending'>('all');
+  const [isUserDialogOpen, setIsUserDialogOpen] = useState(false);
+  const [name, setName] = useState("");
 
   const addTodo = (todo: TodoItem) => {
     setTodos([...todos, todo]);
@@ -49,15 +52,15 @@ const [todos, setTodos] = useState<TodoItem[]>(() => {
   }
 
 
-//   useEffect(() => {
-//     const savedTodos = localStorage.getItem('todos');
-//     if (savedTodos) {
-//       setTodos(JSON.parse(savedTodos));
-//     }
-//     console.log("LocalStorage todos:", localStorage.getItem("todos"));
-// console.log("State todos:", todos);
-
-//   },[])
+  useEffect(() => {
+    const savedUser = localStorage.getItem('name');
+    if (!savedUser) {
+      setIsUserDialogOpen(true)
+    }
+    else{
+      setName(savedUser);
+    }
+  },[])
 
   useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos));
@@ -174,7 +177,7 @@ const [todos, setTodos] = useState<TodoItem[]>(() => {
           <div className='profile-content'>
             <div>
                <p className='name'>Hello,</p>
-            <p className='first-name'>Abhishek</p>
+            <p className='first-name'>{name}</p>
             </div>
             <div className='profile-pic'>
               <img src='https://avatars.githubusercontent.com/u/62734288?v=4' alt='profile-pic' />
@@ -205,6 +208,11 @@ const [todos, setTodos] = useState<TodoItem[]>(() => {
     {isEditDialogOpen && currentTodo && (
       <EditTodoDialog todo={currentTodo} onUpdate={handleEdit} onCloseDialog={() => setIsEditDialogOpen(false)} />
     )}
+    {
+      isUserDialogOpen && (
+        <UserDialog onCloseDialog={() => setIsUserDialogOpen(false)} />
+      )
+    }
     <div><Toaster
     position="bottom-center"
     reverseOrder={false}

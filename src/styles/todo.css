@@ -1,0 +1,138 @@
+.todo-box {
+  min-width: 200px;
+  max-width: 220px;
+  padding: 12px 18px;
+  border-radius: 12px;
+  background-color: white;
+  position: relative;
+  box-shadow: 0 6px 4px rgba(0, 0, 0, 0.10);
+  animation: slideUp 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.check-icon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  cursor: pointer;
+  color: gray;
+  display: none;
+}
+
+.mark-completed:hover {
+  color: #4caf50;
+}
+
+.todo-box:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
+  transition: box-shadow 0.3s;
+}
+.todo-box:hover .check-icon {
+  display: block;
+}
+
+.title-todo {
+  font-size: 1.3rem;
+  padding-right: 14px;
+  line-height: normal;
+}
+
+.description-todo {
+  min-height: 50px;
+  font-size: 0.8rem;
+  line-height: normal;
+}
+
+.todo-more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.more {
+  margin-top: 3px;
+}
+
+.todo-date {
+  font-size: 0.7rem;
+  color: gray;
+}
+
+.todo-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.icon {
+  cursor: pointer;
+  color: gray;
+}
+
+.priority {
+  width: 12px;
+  height: 12px;
+  border-radius: 100%;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Responsive styles for todo card */
+@media (max-width: 600px) {
+  .todo-box {
+    min-width: 0;
+    padding: 14px 10px;
+    font-size: 1rem;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    margin-bottom: 0;
+    border: 1px solid #e3e3e3;
+    transition: box-shadow 0.2s, border-color 0.2s;
+  }
+  .todo-box:hover {
+    box-shadow: 0 4px 18px rgba(0,0,0,0.13);
+    border-color: #b3b3b3;
+  }
+  .title-todo {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #22223b;
+    margin-bottom: 8px;
+    padding-right: 0;
+    line-height: 1.2;
+  }
+  .description-todo {
+    font-size: 0.92rem;
+    color: #4a4e69;
+    min-height: 36px;
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+  .todo-date {
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 4px;
+  }
+  .todo-footer {
+    margin-top: 18px;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-start;
+  }
+  .todo-more {
+    gap: 12px;
+  }
+  .priority {
+    width: 14px;
+    height: 14px;
+  }
+}

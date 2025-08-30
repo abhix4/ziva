@@ -2,6 +2,7 @@ import { CircleCheckBig, Ellipsis, Undo2 } from "lucide-react";
 import { useState } from "react";
 import TodoMoreDialog from "./todo-more-dialog";
 import type { TodoItemProps } from "../types/todos";
+// import '../styles/todo.css'
 
 export default function Todo({ todo, onToggle, onDelete, onEdit, openEditor }: TodoItemProps) {
     const [dialogOpen, setDialogOpen] = useState(false);
