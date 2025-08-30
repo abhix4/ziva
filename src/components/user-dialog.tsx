@@ -4,15 +4,17 @@ import '../styles/dialog.css'
 
 interface UserDialogProps {
   onCloseDialog: () => void;
+  setUserName: (name: string) => void;
 }
 
-export default function UserDialog({ onCloseDialog }: UserDialogProps) {
+export default function UserDialog({ onCloseDialog, setUserName }: UserDialogProps) {
   const [name, setName] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     localStorage.setItem("name", name);
+    setUserName(name)
     onCloseDialog();
   };
 

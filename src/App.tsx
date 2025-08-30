@@ -213,7 +213,7 @@ function App() {
     )}
     {
       isUserDialogOpen && (
-        <UserDialog onCloseDialog={() => setIsUserDialogOpen(false)} />
+        <UserDialog onCloseDialog={() => setIsUserDialogOpen(false)} setUserName={setName} />
       )
     }
     <div><Toaster
